@@ -38,19 +38,13 @@ export class ListComponent implements OnInit {
 
   toggleDestination(destination: DestinationMissionInterface) {
     const locked = !destination.locked;
+    const destAction = locked ? DestinationsActions.LockDestination : DestinationsActions.UnlockDestination;
+    const missionAction = locked ? MissionsActions.LockMission : MissionsActions.UnlockMission;
 
-    if (locked) {
-      this.store.dispatch(new DestinationsActions.LockDestination(destination.id));
+    this.store.dispatch(new destAction(destination.id));
 
-      for (const mission of destination.missions) {
-        this.store.dispatch(new MissionsActions.LockMission(mission.id));
-      }
-    } else {
-      this.store.dispatch(new DestinationsActions.UnlockDestination(destination.id));
-
-      for (const mission of destination.missions) {
-        this.store.dispatch(new MissionsActions.UnlockMission(mission.id));
-      }
+    for (const mission of destination.missions) {
+      this.store.dispatch(new missionAction(mission.id));
     }
   }
 

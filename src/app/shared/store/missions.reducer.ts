@@ -22,7 +22,7 @@ export function missionsReducer(state: MissionsState = missionsInitialState, act
       };
     }
 
-    case MissionsActions.UNLOCK_MISSION : {
+    case MissionsActions.UNLOCK_MISSION: {
       const missionIndex = state.entities.findIndex(m => m.id === action.payload);
       const entities = cloneDeep(state.entities);
       const mission = cloneDeep(state.entities.find(m => m.id === action.payload));
