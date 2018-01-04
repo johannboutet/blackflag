@@ -7,3 +7,22 @@ export interface ShipInterface {
   cargoCapacity: number;
   available: boolean;
 }
+
+export const SHIP_KINDS = [
+  {
+    value: 'schooner',
+    name: 'Schooner',
+  },
+  {
+    value: 'brig',
+    name: 'Brig',
+  },
+  {
+    value: 'frigate',
+    name: 'Frigate',
+  },
+  {
+    value: 'manowar',
+    name: 'Man O\' War',
+  },
+];

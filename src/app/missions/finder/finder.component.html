@@ -1,4 +1,9 @@
-<form [formGroup]="finderForm">
-  <label for="cargo">Maximum cargo capacity</label>
-  <input type="number" name="cargo" id="cargo" formControlName="cargo" step="1" min="0">
-</form>
+<p>Available missions</p>
+
+<ul *ngIf="(availableMissions$ | async)?.length; else noMissions">
+  <li *ngFor="let am of availableMissions$ | async; trackBy: am?.mission.id;">
+    {{ am.mission.title }} - {{ am.ship.name }}
+  </li>
+</ul>
+
+<ng-template #noMissions><p>No missions are available for your fleet</p></ng-template>

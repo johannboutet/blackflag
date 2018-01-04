@@ -1,9 +1,28 @@
 :host {
   display: block;
-  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
   background: rgba(255, 255, 255, 0.5);
 }
 
 form {
-  padding: 20px;
+  & > div {
+    margin: 0 0 10px;
+  }
+
+  input, select, button {
+    padding: 5px;
+    font-family: 'trajan-pro-3', Lato, sans-serif;
+    font-weight: 700;
+    color: #416f80;
+    border: 1px solid #416f80;
+    border-radius: 5px;
+    background: transparent;
+    outline: none;
+  }
+
+  button[disabled] {
+    color: #8da9b3;
+    border-color: #8da9b3;
+  }
 }

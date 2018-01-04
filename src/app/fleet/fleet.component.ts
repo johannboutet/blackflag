@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/app.state';
-import { ShipInterface } from 'app/shared/models/ship.interface';
+import { SHIP_KINDS, ShipInterface } from 'app/shared/models/ship.interface';
 import { AddShip } from 'app/shared/store/fleet.actions';
 import * as fromFleet from 'app/shared/store/fleet.reducer';
 import 'rxjs/add/observable/never';
@@ -14,26 +14,10 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./fleet.component.scss'],
 })
 export class FleetComponent implements OnInit {
+  @ViewChild('nameInput') nameControl: ElementRef;
   ships$: Observable<ShipInterface[]>;
   shipForm: FormGroup;
-  shipKinds = [
-    {
-      value: 'schooner',
-      name: 'Schooner',
-    },
-    {
-      value: 'brig',
-      name: 'Brig',
-    },
-    {
-      value: 'frigate',
-      name: 'Frigate',
-    },
-    {
-      value: 'manowar',
-      name: 'Man O\' War',
-    },
-  ];
+  shipKinds = SHIP_KINDS;
 
   constructor(private store: Store<AppState>, private fb: FormBuilder) {
   }
@@ -51,6 +35,10 @@ export class FleetComponent implements OnInit {
       speed: [null, Validators.required],
       cargoCapacity: [null, Validators.required],
     });
+
+    if (this.nameControl) {
+      this.nameControl.nativeElement.focus();
+    }
   }
 
   addShip() {
@@ -60,7 +48,7 @@ export class FleetComponent implements OnInit {
         firePower: this.shipForm.value.firePower,
         speed: this.shipForm.value.speed,
         cargoCapacity: this.shipForm.value.cargoCapacity,
-        kind: 'brick',
+        kind: this.shipForm.value.kind,
         position: null,
         available: true,
       };

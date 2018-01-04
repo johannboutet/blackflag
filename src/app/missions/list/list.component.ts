@@ -52,4 +52,10 @@ export class ListComponent implements OnInit {
     const action: MissionsActions.All = mission.locked ? new MissionsActions.UnlockMission(mission.id) : new MissionsActions.LockMission(mission.id);
     this.store.dispatch(action);
   }
+
+  trackByDest(index: number, dest: DestinationInterface): string {
+    if (dest) {
+      return dest.id;
+    }
+  }
 }

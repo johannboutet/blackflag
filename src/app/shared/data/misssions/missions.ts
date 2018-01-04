@@ -6,5 +6,5 @@ import { MissionInterface } from 'app/shared/models/mission.interface';
 export const allMissions: MissionInterface[] = [
   ...southern_british_colonies,
   ...gulf_mexico,
-  ...south_atlantic
+  ...south_atlantic,
 ];

@@ -1,13 +1,11 @@
-import { Duration } from 'moment';
-
 export interface MissionInterface {
   id: string;
   title: string;
   city: string;
   destination: string;
-  duration: Duration;
+  duration: string;
   reward: number;
   cargo: { [key: string]: number };
-  total_cargo: number;
+  totalCargo: number;
   locked: boolean;
 }

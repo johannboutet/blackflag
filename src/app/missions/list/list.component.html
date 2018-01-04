@@ -1,12 +1,12 @@
 <ul>
-  <li *ngFor="let dest of destinations$ | async; trackBy: dest?.id;">
+  <li *ngFor="let dest of destinations$ | async; trackBy: trackByDest;">
     <i class="material-icons" [ngClass]="{ '-locked': dest.locked, '-unlocked': !dest.locked }" (click)="toggleDestination(dest)">{{ dest.locked ? 'lock' : 'lock_open' }}</i>
     {{ dest.name }}
 
     <ul>
       <li *ngFor="let mission of dest.missions; trackBy: mission?.id;">
         <i class="material-icons" [ngClass]="{ '-locked': mission.locked, '-unlocked': !mission.locked }" (click)="toggleMission(mission)">{{ mission.locked ? 'lock' : 'lock_open' }}</i>
-        {{ mission.title }} - {{ mission.reward }}R
+        {{ mission.title }} - {{ mission.reward }}R ({{ mission.totalCargo }})
       </li>
     </ul>
   </li>

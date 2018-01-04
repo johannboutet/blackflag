@@ -1,5 +1,4 @@
 import { MissionInterface } from 'app/shared/models/mission.interface';
-import * as moment from 'moment';
 
 export const southern_british_colonies: MissionInterface[] = [
   {
@@ -7,12 +6,12 @@ export const southern_british_colonies: MissionInterface[] = [
     title: 'First Business',
     city: 'St-Augustine',
     destination: 'southern_british_colonies',
-    duration: moment.duration(3, 'minutes'),
+    duration: 'PT3M',
     reward: 50,
     cargo: {
       wine: 5,
     },
-    total_cargo: 5,
+    totalCargo: 5,
     locked: false,
   },
   {
@@ -20,12 +19,12 @@ export const southern_british_colonies: MissionInterface[] = [
     title: 'The Sail Mates',
     city: 'Pensacola',
     destination: 'southern_british_colonies',
-    duration: moment.duration(3, 'minutes'),
+    duration: 'PT3M',
     reward: 75,
     cargo: {
       tobacco: 5,
     },
-    total_cargo: 5,
+    totalCargo: 5,
     locked: false,
   },
   {
@@ -33,13 +32,13 @@ export const southern_british_colonies: MissionInterface[] = [
     title: 'American Dreams',
     city: 'Pensacola',
     destination: 'southern_british_colonies',
-    duration: moment.duration(5, 'minutes'),
+    duration: 'PT5M',
     reward: 100,
     cargo: {
       tobacco: 3,
       wine: 5,
     },
-    total_cargo: 8,
+    totalCargo: 8,
     locked: false,
   },
   {
@@ -47,12 +46,12 @@ export const southern_british_colonies: MissionInterface[] = [
     title: 'New Horizon',
     city: 'Veracruz',
     destination: 'southern_british_colonies',
-    duration: moment.duration(5, 'minutes'),
+    duration: 'PT5M',
     reward: 100,
     cargo: {
       tobacco: 5,
     },
-    total_cargo: 5,
+    totalCargo: 5,
     locked: false,
   },
 ];

@@ -1,5 +1,4 @@
 import { MissionInterface } from 'app/shared/models/mission.interface';
-import * as moment from 'moment';
 
 export const south_atlantic: MissionInterface[] = [
   {
@@ -7,13 +6,13 @@ export const south_atlantic: MissionInterface[] = [
     title: 'A Feast of Riches',
     city: 'New-Orleans',
     destination: 'south_atlantic',
-    duration: moment.duration(8, 'hours'),
+    duration: 'PT8H',
     reward: 1000,
     cargo: {
       rice: 5,
       wine: 10,
     },
-    total_cargo: 15,
+    totalCargo: 15,
     locked: false,
   },
   {
@@ -21,12 +20,12 @@ export const south_atlantic: MissionInterface[] = [
     title: 'Outlaws III',
     city: 'Pensacola',
     destination: 'south_atlantic',
-    duration: moment.duration(8, 'hours'),
+    duration: 'PT8H',
     reward: 1200,
     cargo: {
       tobacco: 20,
     },
-    total_cargo: 20,
+    totalCargo: 20,
     locked: false,
   },
   {
@@ -34,12 +33,12 @@ export const south_atlantic: MissionInterface[] = [
     title: 'Diplomacy III',
     city: 'Pensacola',
     destination: 'south_atlantic',
-    duration: moment.duration(10, 'hours'),
+    duration: 'PT10H',
     reward: 1300,
     cargo: {
       tobacco: 10,
     },
-    total_cargo: 10,
+    totalCargo: 10,
     locked: false,
   },
   {
@@ -47,12 +46,12 @@ export const south_atlantic: MissionInterface[] = [
     title: 'Brethren of the Coast I\n',
     city: 'Veracruz',
     destination: 'south_atlantic',
-    duration: moment.duration(10, 'hours'),
+    duration: 'PT10H',
     reward: 1400,
     cargo: {
       wine: 20,
     },
-    total_cargo: 20,
+    totalCargo: 20,
     locked: false,
   },
   {
@@ -60,13 +59,13 @@ export const south_atlantic: MissionInterface[] = [
     title: 'To The South',
     city: 'Veracruz',
     destination: 'south_atlantic',
-    duration: moment.duration(5, 'hours'),
+    duration: 'PT5H',
     reward: 800,
     cargo: {
       wine: 10,
       cocoa: 5,
     },
-    total_cargo: 15,
+    totalCargo: 15,
     locked: false,
   },
   {
@@ -74,12 +73,12 @@ export const south_atlantic: MissionInterface[] = [
     title: 'Good Works',
     city: 'Veracruz',
     destination: 'south_atlantic',
-    duration: moment.duration(5, 'hours'),
+    duration: 'PT5H',
     reward: 900,
     cargo: {
       rice: 25,
     },
-    total_cargo: 25,
+    totalCargo: 25,
     locked: false,
   },
   {
@@ -87,12 +86,12 @@ export const south_atlantic: MissionInterface[] = [
     title: 'The Big Smoke',
     city: 'Veracruz',
     destination: 'south_atlantic',
-    duration: moment.duration(5, 'hours'),
+    duration: 'PT5H',
     reward: 1000,
     cargo: {
       tobacco: 30,
     },
-    total_cargo: 30,
+    totalCargo: 30,
     locked: false,
   },
 ];

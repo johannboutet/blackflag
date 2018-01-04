@@ -1,13 +1,15 @@
-<ul>
+<ul *ngIf="(ships$ | async)?.length; else addShips">
   <li *ngFor="let ship of ships$ | async; trackBy: ship?.position;">
     {{ ship.name }} - {{ ship.kind }}
   </li>
 </ul>
 
+<ng-template #addShips><p>Start by adding some ships to your fleet</p></ng-template>
+
 <form [formGroup]="shipForm" (submit)="addShip()">
   <div>
     <label for="name">Name:</label>
-    <input type="text" name="name" id="name" formControlName="name">
+    <input #nameInput type="text" name="name" id="name" formControlName="name">
   </div>
 
   <div>
@@ -35,6 +37,4 @@
   <div>
     <button type="submit" [disabled]="shipForm.invalid">Ajouter</button>
   </div>
-
-  <pre>{{ shipForm.value | json }}</pre>
 </form>
