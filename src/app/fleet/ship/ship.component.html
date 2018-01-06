@@ -1,8 +1,8 @@
-<div class="ship" [class.sailing]="!ship.available">
+<div class="ship" [class.sailing]="!ship.available" (click)="toggleShipLock()">
   <div class="ship-status">
     <i [class.icon-anchor]="ship.available" [class.icon-ship]="!ship.available"></i> |
-    <i class="icon-speed"></i> {{ ship.speed }} |
     <i class="icon-cargo"></i> {{ ship.cargoCapacity }} |
+    <i class="icon-speed"></i> {{ ship.speed }} |
     <i class="icon-firepower"></i> {{ ship.firePower }}
   </div>
 

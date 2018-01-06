@@ -35,25 +35,3 @@
     font-weight: 300;
   }
 }
-
-form {
-  & > div {
-    margin: 0 0 10px;
-  }
-
-  input, select, button {
-    padding: 5px;
-    font-family: 'trajan-pro-3', Lato, sans-serif;
-    font-weight: 700;
-    color: #416f80;
-    border: 1px solid #416f80;
-    border-radius: 5px;
-    background: transparent;
-    outline: none;
-  }
-
-  button[disabled] {
-    color: #8da9b3;
-    border-color: #8da9b3;
-  }
-}

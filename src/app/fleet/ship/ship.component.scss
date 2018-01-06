@@ -11,8 +11,9 @@
 
 .ship {
   position: relative;
+  height: 100%;
   margin: 0;
-  padding: 5px 15px 15px;
+  padding: 10px 20px 20px;
   text-align: center;
   cursor: pointer;
   user-select: none;
@@ -52,6 +53,7 @@ p {
   font-size: 18px;
   font-weight: bold;
   color: $naval-blue;
+  white-space: nowrap;
 }
 
 .ship-kind {
@@ -63,9 +65,9 @@ p {
 .ship.sailing {
   & > i::before {
     color: $gold;
-    transform: rotate(-3deg);
+    transform: rotate(-2deg);
     animation-name: sailing;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -79,6 +81,6 @@ p {
 
 @keyframes sailing {
   50% {
-    transform: rotate(0) translateY(3px);
+    transform: rotate(0) translateY(5px);
   }
 }

@@ -1,16 +1,27 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FleetComponent } from './fleet.component';
-import { ShipComponent } from './ship/ship.component';
+import {
+  MatButtonModule, MatDialogModule, MatFormFieldModule, MatInputModule,
+  MatSelectModule,
+} from '@angular/material';
+import { FleetComponent } from 'app/fleet/fleet.component';
+import { ShipFormComponent } from 'app/fleet/ship-form/ship-form.component';
+import { ShipComponent } from 'app/fleet/ship/ship.component';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
   ],
-  declarations: [FleetComponent, ShipComponent],
+  declarations: [FleetComponent, ShipComponent, ShipFormComponent],
   exports: [FleetComponent],
+  entryComponents: [ShipFormComponent],
 })
 export class FleetModule {
 }
