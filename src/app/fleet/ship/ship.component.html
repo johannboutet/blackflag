@@ -1,10 +1,12 @@
-<div class="ship-status">
-  <i [ngClass]="cssClasses"></i> |
-  <i class="icon-speed"></i> {{ ship.speed }} |
-  <i class="icon-cargo"></i> {{ ship.cargoCapacity }} |
-  <i class="icon-firepower"></i> {{ ship.firePower }}
-</div>
+<div class="ship" [class.sailing]="!ship.available">
+  <div class="ship-status">
+    <i [class.icon-anchor]="ship.available" [class.icon-ship]="!ship.available"></i> |
+    <i class="icon-speed"></i> {{ ship.speed }} |
+    <i class="icon-cargo"></i> {{ ship.cargoCapacity }} |
+    <i class="icon-firepower"></i> {{ ship.firePower }}
+  </div>
 
-<i class="icon-{{ ship.kind }}"></i>
-<p class="ship-name">{{ ship.name }}</p>
-<p class="ship-kind" [innerHTML]="shipKindName"></p>
+  <i class="icon-{{ ship.kind }}"></i>
+  <p class="ship-name">{{ ship.name }}</p>
+  <p class="ship-kind" [innerHTML]="shipKindName"></p>
+</div>

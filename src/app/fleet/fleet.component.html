@@ -1,8 +1,13 @@
 <div class="ship-list">
+  <div class="add-ship">
+    <i class="material-icons">plus_one</i>
+    <p>Add ship</p>
+  </div>
+
   <app-ship *ngFor="let ship of ships$ | async; trackBy: ship?.position;" [ship]="ship" (click)="toggleShipLock(ship)"></app-ship>
 </div>
 
-<form [formGroup]="shipForm" (submit)="addShip()">
+<!--<form [formGroup]="shipForm" (submit)="addShip()">
   <div>
     <label for="name">Name:</label>
     <input #nameInput type="text" name="name" id="name" formControlName="name">
@@ -33,4 +38,4 @@
   <div>
     <button type="submit" [disabled]="shipForm.invalid">Ajouter</button>
   </div>
-</form>
+</form>-->

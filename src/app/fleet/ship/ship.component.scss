@@ -3,54 +3,82 @@
 
 :host {
   @include mat-elevation(2);
-  position: relative;
   display: block;
-  margin: 0 10px 10px 0;
-  padding: 5px 15px 15px;
   flex: 1 1 content;
+  margin: 0 10px 10px 0;
+  padding: 0;
+}
+
+.ship {
+  position: relative;
+  margin: 0;
+  padding: 5px 15px 15px;
   text-align: center;
   cursor: pointer;
   user-select: none;
 
-  .ship-status {
-    margin-bottom: 10px;
-    margin-left: -10px;
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 15px;
-    color: $gold;
-    white-space: nowrap;
-    text-align: left;
-
-    .icon-anchor {
-      color: map-get($mat-green, 700);
-    }
-
-    .icon-ship {
-      color: map-get($mat-red, 700);
-    }
-  }
-
   & > i {
     font-size: 80px;
-    color: $gold;
+    color: $naval-blue;
+  }
+}
+
+.ship-status {
+  margin-bottom: 10px;
+  margin-left: -10px;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 15px;
+  color: $gold;
+  white-space: nowrap;
+  text-align: left;
+
+  .icon-anchor {
+    color: map-get($mat-green, 700);
   }
 
-  p {
-    margin: 0;
+  .icon-ship {
+    color: map-get($mat-red, 700);
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.ship-name {
+  margin-bottom: 5px;
+  font-family: 'trajan-pro-3', serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: $naval-blue;
+}
+
+.ship-kind {
+  font-size: 16px;
+  font-weight: 300;
+  color: $gold;
+}
+
+.ship.sailing {
+  & > i::before {
+    color: $gold;
+    transform: rotate(-3deg);
+    animation-name: sailing;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
   }
 
   .ship-name {
-    margin-bottom: 5px;
-    font-family: 'trajan-pro-3', serif;
-    font-size: 18px;
-    font-weight: bold;
-    color: $naval-blue;
-  }
-
-  .ship-kind {
-    font-size: 16px;
-    font-weight: 300;
     color: $gold;
+  }
+}
+
+@keyframes sailing {
+  50% {
+    transform: rotate(0) translateY(3px);
   }
 }

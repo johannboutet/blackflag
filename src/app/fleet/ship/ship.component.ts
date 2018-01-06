@@ -17,11 +17,4 @@ export class ShipComponent {
   get shipKindName() {
     return this.shipKinds.find(k => k.value === this.ship.kind).name;
   }
-
-  get cssClasses() {
-    return {
-      'icon-anchor': this.ship.available,
-      'icon-ship': !this.ship.available,
-    };
-  }
 }
