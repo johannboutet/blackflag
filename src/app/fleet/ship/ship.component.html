@@ -1,0 +1,10 @@
+<div class="ship-status">
+  <i [ngClass]="cssClasses"></i> |
+  <i class="icon-speed"></i> {{ ship.speed }} |
+  <i class="icon-cargo"></i> {{ ship.cargoCapacity }} |
+  <i class="icon-firepower"></i> {{ ship.firePower }}
+</div>
+
+<i class="icon-{{ ship.kind }}"></i>
+<p class="ship-name">{{ ship.name }}</p>
+<p class="ship-kind" [innerHTML]="shipKindName"></p>

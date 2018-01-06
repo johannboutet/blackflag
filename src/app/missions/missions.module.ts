@@ -11,7 +11,6 @@ import { MissionsComponent } from 'app/missions/missions.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FleetModule,
   ],
   declarations: [MissionsComponent, ListComponent, FinderComponent, AvailableComponent],
   exports: [MissionsComponent],

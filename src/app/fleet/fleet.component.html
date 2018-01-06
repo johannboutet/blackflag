@@ -1,10 +1,6 @@
-<ul *ngIf="(ships$ | async)?.length; else addShips">
-  <li *ngFor="let ship of ships$ | async; trackBy: ship?.position;">
-    {{ ship.name }} - {{ ship.kind }}
-  </li>
-</ul>
-
-<ng-template #addShips><p>Start by adding some ships to your fleet</p></ng-template>
+<div class="ship-list">
+  <app-ship *ngFor="let ship of ships$ | async; trackBy: ship?.position;" [ship]="ship" (click)="toggleShipLock(ship)"></app-ship>
+</div>
 
 <form [formGroup]="shipForm" (submit)="addShip()">
   <div>

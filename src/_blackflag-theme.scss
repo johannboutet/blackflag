@@ -1,0 +1,10 @@
+@import "~@angular/material/theming";
+@import "variables";
+
+@include mat-core();
+
+$blackflag-app-primary: mat-palette($palette-blackflag-primary, 500, 300, 900);
+$blackflag-app-secondary: mat-palette($palette-blackflag-secondary, 500, 200, 900);
+$blackflag-app-theme: mat-light-theme($blackflag-app-primary, $blackflag-app-secondary);
+
+@include angular-material-theme($blackflag-app-theme);

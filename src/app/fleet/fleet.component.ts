@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/app.state';
 import { SHIP_KINDS, ShipInterface } from 'app/shared/models/ship.interface';
-import { AddShip } from 'app/shared/store/fleet.actions';
+import { AddShip, LockShip, UnlockShip } from 'app/shared/store/fleet.actions';
 import * as fromFleet from 'app/shared/store/fleet.reducer';
 import 'rxjs/add/observable/never';
 import { Observable } from 'rxjs/Observable';
@@ -56,5 +56,10 @@ export class FleetComponent implements OnInit {
       this.store.dispatch(new AddShip(ship));
       this.initShipForm();
     }
+  }
+
+  toggleShipLock(ship: ShipInterface) {
+    const action = ship.available ? LockShip : UnlockShip;
+    this.store.dispatch(new action(ship));
   }
 }

@@ -1,8 +1,13 @@
 :host {
   display: block;
-  margin-bottom: 20px;
+}
+
+.ship-list {
+  display: flex;
+  flex-flow: row wrap;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.5);
+  justify-content: flex-start;
+  align-items: center;
 }
 
 form {

@@ -1,7 +1,8 @@
-import * as FleetActions from 'app/shared/store/fleet.actions';
-import { ShipInterface } from 'app/shared/models/ship.interface';
-import { fleetInitialState, FleetState } from 'app/shared/store/fleet.state';
 import { AppState } from 'app/app.state';
+import { ShipInterface } from 'app/shared/models/ship.interface';
+import * as FleetActions from 'app/shared/store/fleet.actions';
+import { fleetInitialState, FleetState } from 'app/shared/store/fleet.state';
+import { cloneDeep } from 'lodash';
 import { createSelector } from 'reselect';
 
 type Action = FleetActions.All;
@@ -37,6 +38,28 @@ export function fleetReducer(state: FleetState = fleetInitialState, action: Acti
 
           return ship;
         });
+
+      return {
+        ...state,
+        ships: ships,
+      };
+    }
+
+    case FleetActions.LOCK_SHIP: {
+      const ships = cloneDeep(state.ships);
+      const shipIndex = ships.findIndex(s => s.position === action.payload.position);
+      ships[shipIndex].available = false;
+
+      return {
+        ...state,
+        ships: ships,
+      };
+    }
+
+    case FleetActions.UNLOCK_SHIP: {
+      const ships = cloneDeep(state.ships);
+      const shipIndex = ships.findIndex(s => s.position === action.payload.position);
+      ships[shipIndex].available = true;
 
       return {
         ...state,

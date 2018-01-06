@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ActionReducerMap, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from 'app/app.component';
@@ -22,6 +23,7 @@ const reducers: ActionReducerMap<AppState> = {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MissionsModule,
     FleetModule,
     StoreModule.forRoot(reducers, { initialState: appInitialState }),
