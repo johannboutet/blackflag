@@ -7,15 +7,6 @@ export interface FleetState {
 export const fleetInitialState: FleetState = {
   ships: [
     {
-      name: 'HMS Lol',
-      speed: 45,
-      cargoCapacity: 90,
-      firePower: 140,
-      kind: 'manowar',
-      available: true,
-      position: 1,
-    },
-    {
       name: 'HMS Fortune',
       speed: 50,
       cargoCapacity: 30,

@@ -4,7 +4,7 @@
     {{ dest.name }}
 
     <ul>
-      <li *ngFor="let mission of dest.missions; trackBy: mission?.id;">
+      <li *ngFor="let mission of dest.missions; trackBy: trackById;">
         <i class="material-icons" [ngClass]="{ '-locked': mission.locked, '-unlocked': !mission.locked }" (click)="toggleMission(mission)">{{ mission.locked ? 'lock' : 'lock_open' }}</i>
         {{ mission.title }} - {{ mission.reward }}R ({{ mission.totalCargo }})
       </li>

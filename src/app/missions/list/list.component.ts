@@ -58,4 +58,10 @@ export class ListComponent implements OnInit {
       return dest.id;
     }
   }
+
+  trackById(index: number, mission: MissionInterface): string {
+    if (mission) {
+      return mission.id;
+    }
+  }
 }

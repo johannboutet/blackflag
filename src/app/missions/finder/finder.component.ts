@@ -71,4 +71,8 @@ export class FinderComponent implements OnInit {
 
     return availableMissions;
   }
+
+  trackByMissionId(index: number, am: AvailableMission): string {
+    return am.mission.id;
+  }
 }

@@ -27,4 +27,10 @@ export class FleetComponent implements OnInit {
   openForm() {
     this.dialog.open(ShipFormComponent, { autoFocus: true, disableClose: true });
   }
+
+  trackByPosition(index: number, ship: ShipInterface): number {
+    if (ship) {
+      return ship.position;
+    }
+  }
 }

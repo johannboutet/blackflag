@@ -1,5 +1,5 @@
 <div class="ship-list">
-  <app-ship *ngFor="let ship of ships$ | async; trackBy: ship?.position;" [ship]="ship"></app-ship>
+  <app-ship *ngFor="let ship of ships$ | async; trackBy: trackByPosition;" [ship]="ship"></app-ship>
 
   <div class="add-ship" (click)="openForm()">
     <i class="material-icons">plus_one</i>
