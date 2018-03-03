@@ -1,9 +1,0 @@
-<p>Available missions</p>
-
-<ul *ngIf="(availableMissions$ | async)?.length; else noMissions">
-  <li *ngFor="let am of availableMissions$ | async; trackBy: am?.mission.id;">
-    {{ am.mission.title }} - {{ am.ship.name }}
-  </li>
-</ul>
-
-<ng-template #noMissions><p>No missions are available for your fleet</p></ng-template>
