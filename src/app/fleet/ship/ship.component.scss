@@ -25,14 +25,16 @@
 }
 
 .ship-status {
-  margin-bottom: 10px;
-  margin-left: -10px;
+  position: relative;
+  margin: 0 -10px 10px;
+  padding-right: 20px;
   font-size: 15px;
   font-weight: 300;
   line-height: 15px;
   color: $gold;
   white-space: nowrap;
   text-align: left;
+  cursor: default;
 
   .icon-anchor {
     color: map-get($mat-green, 700);
@@ -41,6 +43,19 @@
   .icon-ship {
     color: map-get($mat-red, 700);
   }
+
+  .delete-ship {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+    color: map-get($mat-red, 700);
+    cursor: pointer;
+  }
+}
+
+.ship:hover .ship-status .delete-ship {
+  visibility: visible;
 }
 
 p {

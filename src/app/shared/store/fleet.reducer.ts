@@ -27,21 +27,20 @@ export function fleetReducer(state: FleetState = fleetInitialState, action: Acti
     }
 
     case FleetActions.REMOVE_SHIP: {
-      const ships = state.ships
-        .filter(ship => ship.position !== action.payload)
-        .map((s) => {
-          const ship: ShipInterface = Object.assign({}, s);
+      const ships = cloneDeep(state.ships);
+      const newShips = ships.filter(ship => ship.position !== action.payload).map((s) => {
+        const ship: ShipInterface = Object.assign({}, s);
 
-          if (ship.position > action.payload) {
-            ship.position -= 1;
-          }
+        if (ship.position > action.payload) {
+          ship.position -= 1;
+        }
 
-          return ship;
-        });
+        return ship;
+      });
 
       return {
         ...state,
-        ships: ships,
+        ships: newShips,
       };
     }
 

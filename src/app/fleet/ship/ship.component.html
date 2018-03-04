@@ -4,6 +4,8 @@
     <i class="icon-cargo"></i> {{ ship.cargoCapacity }} |
     <i class="icon-speed"></i> {{ ship.speed }} |
     <i class="icon-firepower"></i> {{ ship.firePower }}
+
+    <span class="delete-ship" (click)="deleteShip($event)">&times;</span>
   </div>
 
   <i class="icon-{{ ship.kind }}"></i>
