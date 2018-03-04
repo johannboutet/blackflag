@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { ActionReducerMap, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from 'app/app.component';
@@ -10,6 +11,7 @@ import { MissionsModule } from 'app/missions/missions.module';
 import { destinationsReducer } from 'app/shared/store/destinations.reducer';
 import { fleetReducer } from 'app/shared/store/fleet.reducer';
 import { missionsReducer } from 'app/shared/store/missions.reducer';
+import { environment } from 'environments/environment';
 
 const reducers: ActionReducerMap<AppState> = {
   destinations: destinationsReducer,
@@ -28,6 +30,7 @@ const reducers: ActionReducerMap<AppState> = {
     FleetModule,
     StoreModule.forRoot(reducers, { initialState: appInitialState }),
     StoreDevtoolsModule.instrument({ maxAge: 10 }),
+    environment.production ? ServiceWorkerModule.register('ngsw-worker.js') : [],
   ],
   providers: [],
   bootstrap: [AppComponent],
