@@ -12,7 +12,7 @@
         "/blackflag/favicon.ico",
         "/blackflag/index.html",
         "/blackflag/inline.318b50c57b4eba3d437b.bundle.js",
-        "/blackflag/main.be0af65639d8ef36d08b.bundle.js",
+        "/blackflag/main.6f490b5182adf0285703.bundle.js",
         "/blackflag/polyfills.1e8abd46535a69f77c77.bundle.js",
         "/blackflag/styles.3e98401d04691d62f614.bundle.css"
       ],
@@ -48,7 +48,7 @@
   "hashTable": {
     "/blackflag/inline.318b50c57b4eba3d437b.bundle.js": "998c6060446975e566fd17509558ddc68d72eec3",
     "/blackflag/assets/bg.jpg": "e61e8ab89fed2f42bbb7e624bb4fa99bace46b0a",
-    "/blackflag/main.be0af65639d8ef36d08b.bundle.js": "eca4281c676c027b8dc1619ad70c38df8b79bef5",
+    "/blackflag/main.6f490b5182adf0285703.bundle.js": "028d9a2c7e44d2dcda54665b8acd1abf94914e83",
     "/blackflag/assets/icons/icon-128x128.png": "d3500fead3ba1fba306b4a362e317f480221d4aa",
     "/blackflag/polyfills.1e8abd46535a69f77c77.bundle.js": "b57b5d560ac3a83db12c46142f613d124eb253dd",
     "/blackflag/assets/icons/icon-144x144.png": "f0050bb7d31bdbec78645047a20a7e3abeb28b15",
@@ -60,7 +60,7 @@
     "/blackflag/assets/icons/icon-384x384.png": "d572ecd2f62543ded2fb8963609e7b4e234dbf28",
     "/blackflag/favicon.ico": "085d31c2577877de58592f567baf3729db2dcf7b",
     "/blackflag/assets/icons/icon-512x512.png": "4792e2ec05c8f7294e66ec149ab819030757dd49",
-    "/blackflag/index.html": "63affffc2cd74cfacc46cd4e65026ce85d7c18e0",
+    "/blackflag/index.html": "f84d928f278fb81168fafbc654a9fe9ec6b90196",
     "/blackflag/assets/icons/icon-72x72.png": "12280c3c23bb692777cd487b53faf704e1089d26",
     "/blackflag/assets/icons/icon-96x96.png": "24857bd9abb439d1725743f5bb97a462312207d6",
     "/blackflag/fonts/blackflag.eot": "6d0667606a61b2c36ffb5baddc25a564f7102336",
