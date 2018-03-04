@@ -3,10 +3,9 @@
   "short_name": "Blackflag",
   "description": "Track and optimize your Blackflag fleet missions",
   "theme_color": "#beb3a0",
-  "background_color": "#beb3a0",
+  "background_color": "#ffffff",
   "display": "standalone",
-  "Scope": "/",
-  "start_url": "/",
+  "start_url": "index.html",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
