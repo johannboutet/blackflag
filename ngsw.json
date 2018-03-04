@@ -7,10 +7,12 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
+        "/blackflag/favicon-16x16.png",
+        "/blackflag/favicon-32x32.png",
         "/blackflag/favicon.ico",
         "/blackflag/index.html",
         "/blackflag/inline.318b50c57b4eba3d437b.bundle.js",
-        "/blackflag/main.6fda141f2d6f276a4ea5.bundle.js",
+        "/blackflag/main.be0af65639d8ef36d08b.bundle.js",
         "/blackflag/polyfills.1e8abd46535a69f77c77.bundle.js",
         "/blackflag/styles.3e98401d04691d62f614.bundle.css"
       ],
@@ -29,27 +31,41 @@
         "/blackflag/assets/icons/icon-384x384.png",
         "/blackflag/assets/icons/icon-512x512.png",
         "/blackflag/assets/icons/icon-72x72.png",
-        "/blackflag/assets/icons/icon-96x96.png"
+        "/blackflag/assets/icons/icon-96x96.png",
+        "/blackflag/fonts/blackflag.eot",
+        "/blackflag/fonts/blackflag.svg",
+        "/blackflag/fonts/blackflag.ttf",
+        "/blackflag/fonts/blackflag.woff"
       ],
-      "patterns": []
+      "patterns": [
+        "https:\\/\\/fonts\\.googleapis\\.com\\/.*",
+        "https:\\/\\/fonts\\.gstatic\\.com\\/.*",
+        "https:\\/\\/use\\.typekit\\.net\\/.*"
+      ]
     }
   ],
   "dataGroups": [],
   "hashTable": {
     "/blackflag/inline.318b50c57b4eba3d437b.bundle.js": "998c6060446975e566fd17509558ddc68d72eec3",
     "/blackflag/assets/bg.jpg": "e61e8ab89fed2f42bbb7e624bb4fa99bace46b0a",
-    "/blackflag/main.6fda141f2d6f276a4ea5.bundle.js": "c3b24bbf4c9d917a2ebba433d1e6674b2b6797e4",
+    "/blackflag/main.be0af65639d8ef36d08b.bundle.js": "eca4281c676c027b8dc1619ad70c38df8b79bef5",
     "/blackflag/assets/icons/icon-128x128.png": "d3500fead3ba1fba306b4a362e317f480221d4aa",
     "/blackflag/polyfills.1e8abd46535a69f77c77.bundle.js": "b57b5d560ac3a83db12c46142f613d124eb253dd",
     "/blackflag/assets/icons/icon-144x144.png": "f0050bb7d31bdbec78645047a20a7e3abeb28b15",
     "/blackflag/styles.3e98401d04691d62f614.bundle.css": "fb0ea76276d8b7bd7393e42c3a6c2285b0b086e9",
     "/blackflag/assets/icons/icon-152x152.png": "516a23c9d2e3a34f412397df4da90d607f8616a3",
-    "/blackflag/favicon.ico": "085d31c2577877de58592f567baf3729db2dcf7b",
+    "/blackflag/favicon-16x16.png": "b4e8bd138cec20de318512e93e8572c5db6340bb",
     "/blackflag/assets/icons/icon-192x192.png": "d806fa453b74b4f0744a1a3a0dbdeee375afc7c4",
-    "/blackflag/index.html": "d432dabf63a801ac51825279416a94f9c48c6c40",
+    "/blackflag/favicon-32x32.png": "79b9597ee3d70a0c31634c1572f3c4b43d5c8bf0",
     "/blackflag/assets/icons/icon-384x384.png": "d572ecd2f62543ded2fb8963609e7b4e234dbf28",
+    "/blackflag/favicon.ico": "085d31c2577877de58592f567baf3729db2dcf7b",
     "/blackflag/assets/icons/icon-512x512.png": "4792e2ec05c8f7294e66ec149ab819030757dd49",
+    "/blackflag/index.html": "63affffc2cd74cfacc46cd4e65026ce85d7c18e0",
     "/blackflag/assets/icons/icon-72x72.png": "12280c3c23bb692777cd487b53faf704e1089d26",
-    "/blackflag/assets/icons/icon-96x96.png": "24857bd9abb439d1725743f5bb97a462312207d6"
+    "/blackflag/assets/icons/icon-96x96.png": "24857bd9abb439d1725743f5bb97a462312207d6",
+    "/blackflag/fonts/blackflag.eot": "6d0667606a61b2c36ffb5baddc25a564f7102336",
+    "/blackflag/fonts/blackflag.svg": "373ce9fe9db494391bd00e0b29d6a77c9b71e3ee",
+    "/blackflag/fonts/blackflag.ttf": "62ee3c08065c93fb434ff46d192197f21bb1b5e2",
+    "/blackflag/fonts/blackflag.woff": "7397de27d92cfba1538ff512abedb4e5c8ce2c6d"
   }
 }
