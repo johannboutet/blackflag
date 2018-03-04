@@ -6,8 +6,10 @@
       "installMode": "prefetch",
       "resources": {
         "files": [
+          "/index.html",
           "/favicon.ico",
-          "/index.html"
+          "/favicon-16x16.png",
+          "/favicon-32x32.png"
         ],
         "versionedFiles": [
           "/*.bundle.css",
@@ -22,7 +24,13 @@
       "updateMode": "prefetch",
       "resources": {
         "files": [
-          "/assets/**"
+          "/assets/**",
+          "/fonts/*"
+        ],
+        "urls": [
+          "https://fonts.googleapis.com/**",
+          "https://fonts.gstatic.com/**",
+          "https://use.typekit.net/**"
         ]
       }
     }

@@ -30,7 +30,7 @@ const reducers: ActionReducerMap<AppState> = {
     FleetModule,
     StoreModule.forRoot(reducers, { initialState: appInitialState }),
     StoreDevtoolsModule.instrument({ maxAge: 10 }),
-    environment.production ? ServiceWorkerModule.register('ngsw-worker.js') : [],
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent],
