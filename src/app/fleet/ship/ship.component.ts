@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/app.state';
 import { SHIP_KINDS, ShipInterface } from 'app/shared/models/ship.interface';
-import { LockShip, UnlockShip } from 'app/shared/store/fleet.actions';
+import { LockShip, RemoveShip, UnlockShip } from 'app/shared/store/fleet.actions';
 
 @Component({
   selector: 'app-ship',
@@ -23,5 +23,10 @@ export class ShipComponent {
   toggleShipLock() {
     const action = this.ship.available ? LockShip : UnlockShip;
     this.store.dispatch(new action(this.ship));
+  }
+
+  deleteShip(event) {
+    event.stopPropagation();
+    this.store.dispatch(new RemoveShip(this.ship.position));
   }
 }
