@@ -9,8 +9,11 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico",
-        "fonts"
+        "fonts",
+        "manifest.json",
+        "favicon-16x16.png",
+        "favicon-32x32.png",
+        "favicon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
