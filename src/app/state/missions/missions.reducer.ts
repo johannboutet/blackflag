@@ -1,6 +1,6 @@
-import { AppState } from 'app/app.state';
-import * as MissionsActions from 'app/shared/store/missions.actions';
-import { missionsInitialState, MissionsState } from 'app/shared/store/missions.state';
+import { AppState } from 'app/state/app.state';
+import * as MissionsActions from 'app/state/missions/missions.actions';
+import { missionsInitialState, MissionsState } from 'app/state/missions/missions.state';
 import { createSelector } from 'reselect';
 import { cloneDeep } from 'lodash';
 

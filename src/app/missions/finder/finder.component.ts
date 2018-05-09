@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from 'app/app.state';
+import { AppState } from 'app/state/app.state';
 import { MissionInterface } from 'app/shared/models/mission.interface';
 import { ShipInterface } from 'app/shared/models/ship.interface';
-import { getShips } from 'app/shared/store/fleet.reducer';
-import { getMissions } from 'app/shared/store/missions.reducer';
+import { getShips } from 'app/state/fleet/fleet.reducer';
+import { getMissions } from 'app/state/missions/missions.reducer';
 import { cloneDeep } from 'lodash';
 import { combineLatest, Observable } from 'rxjs';
 

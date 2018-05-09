@@ -1,6 +1,6 @@
-import { AppState } from 'app/app.state';
-import * as DestinationsActions from 'app/shared/store/destinations.actions';
-import { destinationInitialState, DestinationsState } from 'app/shared/store/destinations.state';
+import { AppState } from 'app/state/app.state';
+import * as DestinationsActions from 'app/state/destinations/destinations.actions';
+import { destinationInitialState, DestinationsState } from 'app/state/destinations/destinations.state';
 import { cloneDeep } from 'lodash';
 import { createSelector } from 'reselect';
 

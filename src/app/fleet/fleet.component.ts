@@ -1,10 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { Store } from '@ngrx/store';
-import { AppState } from 'app/app.state';
+import { AppState } from 'app/state/app.state';
 import { ShipFormComponent } from 'app/fleet/ship-form/ship-form.component';
 import { ShipInterface } from 'app/shared/models/ship.interface';
-import * as fromFleet from 'app/shared/store/fleet.reducer';
+import * as fromFleet from 'app/state/fleet/fleet.reducer';
 
 import { Observable } from 'rxjs';
 

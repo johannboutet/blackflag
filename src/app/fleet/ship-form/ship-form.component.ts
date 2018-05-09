@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';
 import { Store } from '@ngrx/store';
-import { AppState } from 'app/app.state';
+import { AppState } from 'app/state/app.state';
 import { SHIP_KINDS, ShipInterface } from 'app/shared/models/ship.interface';
-import { AddShip } from 'app/shared/store/fleet.actions';
+import { AddShip } from 'app/state/fleet/fleet.actions';
 
 @Component({
   selector: 'app-ship-form',

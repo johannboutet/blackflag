@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from 'app/app.state';
+import { AppState } from 'app/state/app.state';
 import { SHIP_KINDS, ShipInterface } from 'app/shared/models/ship.interface';
-import { LockShip, RemoveShip, UnlockShip } from 'app/shared/store/fleet.actions';
+import { LockShip, RemoveShip, UnlockShip } from 'app/state/fleet/fleet.actions';
 
 @Component({
   selector: 'app-ship',

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from 'app/app.state';
+import { AppState } from 'app/state/app.state';
 import { DestinationInterface } from 'app/shared/models/destination.interface';
 import { DestinationMissionInterface } from 'app/shared/models/destination_mission.interface';
 import { MissionInterface } from 'app/shared/models/mission.interface';
-import * as DestinationsActions from 'app/shared/store/destinations.actions';
-import * as fromDestinations from 'app/shared/store/destinations.reducer';
-import * as MissionsActions from 'app/shared/store/missions.actions';
-import * as fromMissions from 'app/shared/store/missions.reducer';
+import * as DestinationsActions from 'app/state/destinations/destinations.actions';
+import * as fromDestinations from 'app/state/destinations/destinations.reducer';
+import * as MissionsActions from 'app/state/missions/missions.actions';
+import * as fromMissions from 'app/state/missions/missions.reducer';
 import { combineLatest, Observable } from 'rxjs';
 
 @Component({

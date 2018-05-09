@@ -1,7 +1,7 @@
-import { AppState } from 'app/app.state';
+import { AppState } from 'app/state/app.state';
 import { ShipInterface } from 'app/shared/models/ship.interface';
-import * as FleetActions from 'app/shared/store/fleet.actions';
-import { fleetInitialState, FleetState } from 'app/shared/store/fleet.state';
+import * as FleetActions from 'app/state/fleet/fleet.actions';
+import { fleetInitialState, FleetState } from 'app/state/fleet/fleet.state';
 import { cloneDeep } from 'lodash';
 import { createSelector } from 'reselect';
 

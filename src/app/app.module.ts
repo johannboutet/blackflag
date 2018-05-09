@@ -5,12 +5,12 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { ActionReducerMap, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from 'app/app.component';
-import { appInitialState, AppState } from 'app/app.state';
+import { appInitialState, AppState } from 'app/state/app.state';
 import { FleetModule } from 'app/fleet/fleet.module';
 import { MissionsModule } from 'app/missions/missions.module';
-import { destinationsReducer } from 'app/shared/store/destinations.reducer';
-import { fleetReducer } from 'app/shared/store/fleet.reducer';
-import { missionsReducer } from 'app/shared/store/missions.reducer';
+import { destinationsReducer } from 'app/state/destinations/destinations.reducer';
+import { fleetReducer } from 'app/state/fleet/fleet.reducer';
+import { missionsReducer } from 'app/state/missions/missions.reducer';
 import { environment } from 'environments/environment';
 
 const reducers: ActionReducerMap<AppState> = {
