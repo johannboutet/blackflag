@@ -3,7 +3,9 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/app.state';
 import { MissionInterface } from 'app/shared/models/mission.interface';
 import { ShipInterface } from 'app/shared/models/ship.interface';
+import { LockShip } from 'app/state/fleet/fleet.actions';
 import { getShips } from 'app/state/fleet/fleet.reducer';
+import { LockMission } from 'app/state/missions/missions.actions';
 import { getMissions } from 'app/state/missions/missions.reducer';
 import { cloneDeep } from 'lodash';
 import { combineLatest, Observable } from 'rxjs';
@@ -64,14 +66,19 @@ export class FinderComponent implements OnInit {
           ship: bestShip,
         });
 
-        availableShips.splice(availableShips.findIndex(s => s === bestShip), 1);
+        availableShips.splice(availableShips.indexOf(bestShip), 1);
       }
     }
 
     return availableMissions;
   }
 
-  trackByMissionId(index: number, am: AvailableMission): string {
+  startMission(am: AvailableMission) {
+    this.store.dispatch(new LockMission(am.mission.id));
+    this.store.dispatch(new LockShip(am.ship));
+  }
+
+  trackByMissionId = (index: number, am: AvailableMission): string => {
     return am.mission.id;
   }
 }

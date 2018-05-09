@@ -1,8 +1,9 @@
 <p>Available missions</p>
 
 <ul *ngIf="(availableMissions$ | async)?.length; else noMissions">
-  <li *ngFor="let am of availableMissions$ | async; trackBy: am?.mission.id;">
+  <li *ngFor="let am of availableMissions$ | async; trackBy: trackByMissionId;">
     {{ am.mission.title }} - {{ am.ship.name }}
+    <span (click)="startMission(am)">[start]</span>
   </li>
 </ul>
 
