@@ -1,22 +1,20 @@
 import { Action } from '@ngrx/store';
 
-export const LOCK_MISSION = '[Missions] Lock a mission';
-export const UNLOCK_MISSION = '[Missions] Unlock a mission';
+export enum MissionsActionTypes {
+  LOCK_MISSION = '[Missions] Lock a mission',
+  UNLOCK_MISSION = '[Missions] Unlock a mission',
+}
 
 export class LockMission implements Action {
-  readonly type = LOCK_MISSION;
+  readonly type = MissionsActionTypes.LOCK_MISSION;
 
-  constructor(public payload: string) {
-  }
+  constructor(public payload: string) {}
 }
 
 export class UnlockMission implements Action {
-  readonly type = UNLOCK_MISSION;
+  readonly type = MissionsActionTypes.UNLOCK_MISSION;
 
-  constructor(public payload: string) {
-  }
+  constructor(public payload: string) {}
 }
 
-export type All
-  = LockMission |
-  UnlockMission;
+export type MissionsActions = LockMission | UnlockMission;

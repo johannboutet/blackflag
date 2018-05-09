@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from 'app/state/app.state';
 import { DestinationInterface } from 'app/shared/models/destination.interface';
 import { DestinationMissionInterface } from 'app/shared/models/destination_mission.interface';
 import { MissionInterface } from 'app/shared/models/mission.interface';
-import * as DestinationsActions from 'app/state/destinations/destinations.actions';
-import * as fromDestinations from 'app/state/destinations/destinations.reducer';
-import * as MissionsActions from 'app/state/missions/missions.actions';
-import * as fromMissions from 'app/state/missions/missions.reducer';
+import { AppState } from 'app/state/app.state';
+import { LockDestination, UnlockDestination } from 'app/state/destinations/destinations.actions';
+import { getDestinations } from 'app/state/destinations/destinations.reducer';
+import { LockMission, MissionsActions, UnlockMission } from 'app/state/missions/missions.actions';
+import { getMissions } from 'app/state/missions/missions.reducer';
 import { combineLatest, Observable } from 'rxjs';
 
 @Component({
@@ -18,12 +18,11 @@ import { combineLatest, Observable } from 'rxjs';
 export class ListComponent implements OnInit {
   destinations$: Observable<DestinationMissionInterface[]>;
 
-  constructor(private store: Store<AppState>) {
-  }
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit() {
-    const destinations$: Observable<DestinationInterface[]> = this.store.select(fromDestinations.getDestinations);
-    const missions$: Observable<MissionInterface[]> = this.store.select(fromMissions.getMissions);
+    const destinations$: Observable<DestinationInterface[]> = this.store.select(getDestinations);
+    const missions$: Observable<MissionInterface[]> = this.store.select(getMissions);
 
     this.destinations$ = combineLatest(destinations$, missions$, (destinations, missions) => {
       return destinations.map((destination) => {
@@ -37,8 +36,8 @@ export class ListComponent implements OnInit {
 
   toggleDestination(destination: DestinationMissionInterface) {
     const locked = !destination.locked;
-    const destAction = locked ? DestinationsActions.LockDestination : DestinationsActions.UnlockDestination;
-    const missionAction = locked ? MissionsActions.LockMission : MissionsActions.UnlockMission;
+    const destAction = locked ? LockDestination : UnlockDestination;
+    const missionAction = locked ? LockMission : UnlockMission;
 
     this.store.dispatch(new destAction(destination.id));
 
@@ -48,7 +47,7 @@ export class ListComponent implements OnInit {
   }
 
   toggleMission(mission: MissionInterface) {
-    const action: MissionsActions.All = mission.locked ? new MissionsActions.UnlockMission(mission.id) : new MissionsActions.LockMission(mission.id);
+    const action: MissionsActions = mission.locked ? new UnlockMission(mission.id) : new LockMission(mission.id);
     this.store.dispatch(action);
   }
 

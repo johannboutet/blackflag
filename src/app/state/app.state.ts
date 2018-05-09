@@ -1,6 +1,6 @@
 import { destinationInitialState, DestinationsState } from 'app/state/destinations/destinations.state';
-import { missionsInitialState, MissionsState } from 'app/state/missions/missions.state';
 import { fleetInitialState, FleetState } from 'app/state/fleet/fleet.state';
+import { missionsInitialState, MissionsState } from 'app/state/missions/missions.state';
 
 export interface AppState {
   readonly destinations: DestinationsState;

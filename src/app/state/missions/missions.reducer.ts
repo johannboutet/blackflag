@@ -1,14 +1,12 @@
 import { AppState } from 'app/state/app.state';
-import * as MissionsActions from 'app/state/missions/missions.actions';
+import { MissionsActions, MissionsActionTypes } from 'app/state/missions/missions.actions';
 import { missionsInitialState, MissionsState } from 'app/state/missions/missions.state';
-import { createSelector } from 'reselect';
 import { cloneDeep } from 'lodash';
+import { createSelector } from 'reselect';
 
-type Action = MissionsActions.All;
-
-export function missionsReducer(state: MissionsState = missionsInitialState, action: Action): MissionsState {
+export function missionsReducer(state: MissionsState = missionsInitialState, action: MissionsActions): MissionsState {
   switch (action.type) {
-    case MissionsActions.LOCK_MISSION: {
+    case MissionsActionTypes.LOCK_MISSION: {
       const missionIndex = state.entities.findIndex(m => m.id === action.payload);
       const entities = cloneDeep(state.entities);
       const mission = cloneDeep(state.entities.find(m => m.id === action.payload));
@@ -22,7 +20,7 @@ export function missionsReducer(state: MissionsState = missionsInitialState, act
       };
     }
 
-    case MissionsActions.UNLOCK_MISSION: {
+    case MissionsActionTypes.UNLOCK_MISSION: {
       const missionIndex = state.entities.findIndex(m => m.id === action.payload);
       const entities = cloneDeep(state.entities);
       const mission = cloneDeep(state.entities.find(m => m.id === action.payload));

@@ -1,14 +1,12 @@
 import { AppState } from 'app/state/app.state';
-import * as DestinationsActions from 'app/state/destinations/destinations.actions';
+import { DestinationsActions, DestinationsActionTypes } from 'app/state/destinations/destinations.actions';
 import { destinationInitialState, DestinationsState } from 'app/state/destinations/destinations.state';
 import { cloneDeep } from 'lodash';
 import { createSelector } from 'reselect';
 
-type Action = DestinationsActions.All;
-
-export function destinationsReducer(state: DestinationsState = destinationInitialState, action: Action): DestinationsState {
+export function destinationsReducer(state: DestinationsState = destinationInitialState, action: DestinationsActions): DestinationsState {
   switch (action.type) {
-    case DestinationsActions.LOCK_DESTINATION: {
+    case DestinationsActionTypes.LOCK_DESTINATION: {
       const destinationIndex = state.entities.findIndex(d => d.id === action.payload);
       const entities = cloneDeep(state.entities);
       const destination = cloneDeep(state.entities.find(d => d.id === action.payload));
@@ -22,7 +20,7 @@ export function destinationsReducer(state: DestinationsState = destinationInitia
       };
     }
 
-    case DestinationsActions.UNLOCK_DESTINATION : {
+    case DestinationsActionTypes.UNLOCK_DESTINATION : {
       const destinationIndex = state.entities.findIndex(d => d.id === action.payload);
       const entities = cloneDeep(state.entities);
       const destination = cloneDeep(state.entities.find(d => d.id === action.payload));

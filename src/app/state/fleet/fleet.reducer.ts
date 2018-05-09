@@ -1,22 +1,20 @@
-import { AppState } from 'app/state/app.state';
 import { ShipInterface } from 'app/shared/models/ship.interface';
-import * as FleetActions from 'app/state/fleet/fleet.actions';
+import { AppState } from 'app/state/app.state';
+import { FleetActions, FleetActionTypes } from 'app/state/fleet/fleet.actions';
 import { fleetInitialState, FleetState } from 'app/state/fleet/fleet.state';
 import { cloneDeep } from 'lodash';
 import { createSelector } from 'reselect';
 
-type Action = FleetActions.All;
-
-export function fleetReducer(state: FleetState = fleetInitialState, action: Action): FleetState {
+export function fleetReducer(state: FleetState = fleetInitialState, action: FleetActions): FleetState {
   switch (action.type) {
-    case FleetActions.SET_SHIPS: {
+    case FleetActionTypes.SET_SHIPS: {
       return {
         ...state,
         ships: action.payload,
       };
     }
 
-    case FleetActions.ADD_SHIP: {
+    case FleetActionTypes.ADD_SHIP: {
       const ship: ShipInterface = action.payload as ShipInterface;
       ship.position = state.ships.length + 1;
 
@@ -26,7 +24,7 @@ export function fleetReducer(state: FleetState = fleetInitialState, action: Acti
       };
     }
 
-    case FleetActions.REMOVE_SHIP: {
+    case FleetActionTypes.REMOVE_SHIP: {
       const ships = cloneDeep(state.ships);
       const newShips = ships.filter(ship => ship.position !== action.payload).map((s) => {
         const ship: ShipInterface = Object.assign({}, s);
@@ -44,7 +42,7 @@ export function fleetReducer(state: FleetState = fleetInitialState, action: Acti
       };
     }
 
-    case FleetActions.LOCK_SHIP: {
+    case FleetActionTypes.LOCK_SHIP: {
       const ships = cloneDeep(state.ships);
       const shipIndex = ships.findIndex(s => s.position === action.payload.position);
       ships[shipIndex].available = false;
@@ -55,7 +53,7 @@ export function fleetReducer(state: FleetState = fleetInitialState, action: Acti
       };
     }
 
-    case FleetActions.UNLOCK_SHIP: {
+    case FleetActionTypes.UNLOCK_SHIP: {
       const ships = cloneDeep(state.ships);
       const shipIndex = ships.findIndex(s => s.position === action.payload.position);
       ships[shipIndex].available = true;
