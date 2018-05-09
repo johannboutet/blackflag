@@ -5,6 +5,7 @@ import { MissionInterface } from 'app/shared/models/mission.interface';
 import { ShipInterface } from 'app/shared/models/ship.interface';
 import { LockShip } from 'app/state/fleet/fleet.actions';
 import { getShips } from 'app/state/fleet/fleet.reducer';
+import { StartMission } from 'app/state/in-progress/in-progress.actions';
 import { LockMission } from 'app/state/missions/missions.actions';
 import { getMissions } from 'app/state/missions/missions.reducer';
 import { cloneDeep } from 'lodash';
@@ -74,8 +75,12 @@ export class FinderComponent implements OnInit {
   }
 
   startMission(am: AvailableMission) {
-    this.store.dispatch(new LockMission(am.mission.id));
-    this.store.dispatch(new LockShip(am.ship));
+    const ship = am.ship;
+    const mission = am.mission;
+
+    this.store.dispatch(new LockMission(mission.id));
+    this.store.dispatch(new LockShip(ship));
+    this.store.dispatch(new StartMission({ mission, ship }));
   }
 
   trackByMissionId = (index: number, am: AvailableMission): string => {
