@@ -4,12 +4,11 @@ import { AppState } from 'app/app.state';
 import { DestinationInterface } from 'app/shared/models/destination.interface';
 import { DestinationMissionInterface } from 'app/shared/models/destination_mission.interface';
 import { MissionInterface } from 'app/shared/models/mission.interface';
+import * as DestinationsActions from 'app/shared/store/destinations.actions';
 import * as fromDestinations from 'app/shared/store/destinations.reducer';
 import * as MissionsActions from 'app/shared/store/missions.actions';
-import * as DestinationsActions from 'app/shared/store/destinations.actions';
 import * as fromMissions from 'app/shared/store/missions.reducer';
-import 'rxjs/add/observable/combineLatest';
-import { Observable } from 'rxjs/Observable';
+import { combineLatest, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-mission-list',
@@ -26,7 +25,7 @@ export class ListComponent implements OnInit {
     const destinations$: Observable<DestinationInterface[]> = this.store.select(fromDestinations.getDestinations);
     const missions$: Observable<MissionInterface[]> = this.store.select(fromMissions.getMissions);
 
-    this.destinations$ = Observable.combineLatest(destinations$, missions$, (destinations, missions) => {
+    this.destinations$ = combineLatest(destinations$, missions$, (destinations, missions) => {
       return destinations.map((destination) => {
         return {
           ...destination,

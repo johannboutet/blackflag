@@ -5,9 +5,8 @@ import { MissionInterface } from 'app/shared/models/mission.interface';
 import { ShipInterface } from 'app/shared/models/ship.interface';
 import { getShips } from 'app/shared/store/fleet.reducer';
 import { getMissions } from 'app/shared/store/missions.reducer';
-import 'rxjs/add/observable/never';
-import { Observable } from 'rxjs/Observable';
 import { cloneDeep } from 'lodash';
+import { combineLatest, Observable } from 'rxjs';
 
 interface AvailableMission {
   mission: MissionInterface;
@@ -47,7 +46,7 @@ export class FinderComponent implements OnInit {
     const missions$: Observable<MissionInterface[]> = this.store.select(getMissions);
     const ships$: Observable<ShipInterface[]> = this.store.select(getShips);
 
-    this.availableMissions$ = Observable.combineLatest(missions$, ships$, this.findBestCombination);
+    this.availableMissions$ = combineLatest(missions$, ships$, this.findBestCombination);
   }
 
   findBestCombination(missions: MissionInterface[], ships: ShipInterface[]): AvailableMission[] {

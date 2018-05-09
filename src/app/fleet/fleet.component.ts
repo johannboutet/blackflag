@@ -5,8 +5,8 @@ import { AppState } from 'app/app.state';
 import { ShipFormComponent } from 'app/fleet/ship-form/ship-form.component';
 import { ShipInterface } from 'app/shared/models/ship.interface';
 import * as fromFleet from 'app/shared/store/fleet.reducer';
-import 'rxjs/add/observable/never';
-import { Observable } from 'rxjs/Observable';
+
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-fleet',
