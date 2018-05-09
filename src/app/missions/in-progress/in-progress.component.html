@@ -1,0 +1,10 @@
+<p>Missions in progress</p>
+
+<ul *ngIf="(inProgressMissions$ | async)?.length; else noMissions">
+  <li *ngFor="let ip of inProgressMissions$ | async; trackBy: trackByMissionId;">
+    {{ ip.mission.title }} - {{ ip.ship.name }}
+    <span (click)="stopMission(ip)">[stop]</span>
+  </li>
+</ul>
+
+<ng-template #noMissions><p>No missions are in currently in progress</p></ng-template>
