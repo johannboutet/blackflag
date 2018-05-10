@@ -1,5 +1,5 @@
 @import "~@angular/material/theming";
-@import "~variables.scss";
+@import "~styles/variables.scss";
 
 :host {
   @include mat-elevation(2);
@@ -29,7 +29,7 @@
   margin: 0 -10px 10px;
   padding-right: 20px;
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 15px;
   color: $gold;
   white-space: nowrap;
@@ -73,7 +73,7 @@ p {
 
 .ship-kind {
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   color: $gold;
 }
 

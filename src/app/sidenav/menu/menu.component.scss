@@ -1,0 +1,10 @@
+@import "~styles/variables";
+
+.mat-list-item {
+  color: $pale-gold;
+  font-family: 'trajan-pro-3', serif;
+
+  &:hover {
+    background: $pale-blue;
+  }
+}

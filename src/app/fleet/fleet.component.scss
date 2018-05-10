@@ -1,5 +1,5 @@
 @import "~@angular/material/theming";
-@import "~variables.scss";
+@import "~styles/variables.scss";
 
 :host {
   display: block;
@@ -32,6 +32,6 @@
 
   p {
     margin: 0;
-    font-weight: 300;
+    font-weight: 400;
   }
 }

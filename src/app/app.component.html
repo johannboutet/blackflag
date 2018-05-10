@@ -1,3 +1,12 @@
-<app-fleet></app-fleet>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" [opened]="true" [disableClose]="true" [fixedInViewport]="true">
+    <app-sidenav></app-sidenav>
+  </mat-sidenav>
 
-<app-missions></app-missions>
+  <mat-sidenav-content>
+    <app-fleet></app-fleet>
+    <app-missions></app-missions>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

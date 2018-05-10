@@ -1,13 +1,22 @@
 @import url("https://use.typekit.net/vxm4tcl.css");
 @import "~normalize.css";
-@import "blackflag-font";
-@import "blackflag-theme";
+@import "~styles/blackflag-font";
+@import "~styles/blackflag-theme";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 16px;
+}
 
 body {
   margin: 0;
   padding: 0;
   font-family: Lato, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
