@@ -1,0 +1,17 @@
+@import "~styles/variables";
+
+svg#logo {
+  display: block;
+  height: 10rem;
+  margin: 1.25rem auto;
+}
+
+.mat-list-item {
+  color: $pale-gold;
+  font-family: 'trajan-pro-3', serif;
+
+  &:hover,
+  &.active {
+    background: $pale-blue;
+  }
+}

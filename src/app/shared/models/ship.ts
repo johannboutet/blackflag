@@ -1,4 +1,4 @@
-export interface ShipInterface {
+export interface Ship {
   position: number;
   name: string;
   kind: string;

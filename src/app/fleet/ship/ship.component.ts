@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/app.state';
-import { SHIP_KINDS, ShipInterface } from 'app/shared/models/ship.interface';
+import { SHIP_KINDS, Ship } from 'app/shared/models/ship';
 import { LockShip, RemoveShip, UnlockShip } from 'app/state/fleet/fleet.actions';
 
 @Component({
@@ -10,7 +10,7 @@ import { LockShip, RemoveShip, UnlockShip } from 'app/state/fleet/fleet.actions'
   styleUrls: ['./ship.component.scss'],
 })
 export class ShipComponent {
-  @Input() ship: ShipInterface;
+  @Input() ship: Ship;
   shipKinds = SHIP_KINDS;
 
   constructor(private store: Store<AppState>) {

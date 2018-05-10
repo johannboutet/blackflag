@@ -1,0 +1,10 @@
+<p>Ongoing Missions</p>
+
+<ul *ngIf="(ongoingMissions$ | async)?.length; else noMissions">
+  <li *ngFor="let ogMission of ongoingMissions$ | async; trackBy: trackByMissionId;">
+    {{ ogMission.mission.title }} - {{ ogMission.ship.name }}
+    <span (click)="stopMission.emit(ogMission)">[stop]</span>
+  </li>
+</ul>
+
+<ng-template #noMissions><p>There is currently no ongoing mission.</p></ng-template>

@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { ShipInterface } from 'app/shared/models/ship.interface';
+import { Ship } from 'app/shared/models/ship';
 
 export enum FleetActionTypes {
   SET_SHIPS = '[Fleet] Set ships',
@@ -12,13 +12,13 @@ export enum FleetActionTypes {
 export class SetShips implements Action {
   readonly type = FleetActionTypes.SET_SHIPS;
 
-  constructor(public payload: ShipInterface[]) {}
+  constructor(public payload: Ship[]) {}
 }
 
 export class AddShip implements Action {
   readonly type = FleetActionTypes.ADD_SHIP;
 
-  constructor(public payload: ShipInterface) {}
+  constructor(public payload: Ship) {}
 }
 
 export class RemoveShip implements Action {
@@ -30,13 +30,13 @@ export class RemoveShip implements Action {
 export class LockShip implements Action {
   readonly type = FleetActionTypes.LOCK_SHIP;
 
-  constructor(public payload: ShipInterface) {}
+  constructor(public payload: Ship) {}
 }
 
 export class UnlockShip implements Action {
   readonly type = FleetActionTypes.UNLOCK_SHIP;
 
-  constructor(public payload: ShipInterface) {}
+  constructor(public payload: Ship) {}
 }
 
 export type FleetActions = SetShips | AddShip | RemoveShip | LockShip | UnlockShip;

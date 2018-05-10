@@ -1,6 +1,6 @@
-import { MissionInterface } from 'app/shared/models/mission.interface';
+import { Mission } from 'app/shared/models/mission';
 
-export const southern_british_colonies: MissionInterface[] = [
+export const southern_british_colonies: Mission[] = [
   {
     id: '1-1',
     title: 'First Business',

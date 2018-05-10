@@ -3,7 +3,7 @@
 <ul *ngIf="(availableMissions$ | async)?.length; else noMissions">
   <li *ngFor="let am of availableMissions$ | async; trackBy: trackByMissionId;">
     {{ am.mission.title }} - {{ am.ship.name }}
-    <span (click)="startMission(am)">[start]</span>
+    <span (click)="startMission.emit(am)">[start]</span>
   </li>
 </ul>
 

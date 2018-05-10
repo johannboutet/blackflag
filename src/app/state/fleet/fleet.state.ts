@@ -1,7 +1,7 @@
-import { ShipInterface } from 'app/shared/models/ship.interface';
+import { Ship } from 'app/shared/models/ship';
 
 export interface FleetState {
-  ships: ShipInterface[];
+  ships: Ship[];
 }
 
 export const fleetInitialState: FleetState = {

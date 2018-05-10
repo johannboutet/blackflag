@@ -1,6 +1,6 @@
-import { MissionInterface } from 'app/shared/models/mission.interface';
+import { Mission } from 'app/shared/models/mission';
 
-export const south_atlantic: MissionInterface[] = [
+export const south_atlantic: Mission[] = [
   {
     id: '3-1',
     title: 'A Feast of Riches',

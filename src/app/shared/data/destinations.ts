@@ -1,9 +1,9 @@
 import { southern_british_colonies } from 'app/shared/data/misssions/01_southern_british_colonies';
 import { gulf_mexico } from 'app/shared/data/misssions/02_gulf_mexico';
 import { south_atlantic } from 'app/shared/data/misssions/03_south_atlantic';
-import { DestinationInterface } from 'app/shared/models/destination.interface';
+import { Destination } from 'app/shared/models/destination';
 
-export const destinations: DestinationInterface[] = [
+export const destinations: Destination[] = [
   {
     id: 'southern_british_colonies',
     name: 'Southern British Colonies',

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LogoComponent } from './logo.component';
+import { OngoingMissionsComponent } from './ongoing-missions.component';
 
-describe('LogoComponent', () => {
-  let component: LogoComponent;
-  let fixture: ComponentFixture<LogoComponent>;
+describe('OngoingMissionsComponent', () => {
+  let component: OngoingMissionsComponent;
+  let fixture: ComponentFixture<OngoingMissionsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LogoComponent ]
+      declarations: [ OngoingMissionsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LogoComponent);
+    fixture = TestBed.createComponent(OngoingMissionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,6 +1,6 @@
-import { MissionInterface } from 'app/shared/models/mission.interface';
+import { Mission } from 'app/shared/models/mission';
 
-export const gulf_mexico: MissionInterface[] = [
+export const gulf_mexico: Mission[] = [
   {
     id: '2-1',
     title: 'The General Store',

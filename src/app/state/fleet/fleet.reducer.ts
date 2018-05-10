@@ -1,4 +1,4 @@
-import { ShipInterface } from 'app/shared/models/ship.interface';
+import { Ship } from 'app/shared/models/ship';
 import { AppState } from 'app/state/app.state';
 import { FleetActions, FleetActionTypes } from 'app/state/fleet/fleet.actions';
 import { fleetInitialState, FleetState } from 'app/state/fleet/fleet.state';
@@ -15,7 +15,7 @@ export function fleetReducer(state: FleetState = fleetInitialState, action: Flee
     }
 
     case FleetActionTypes.ADD_SHIP: {
-      const ship: ShipInterface = action.payload as ShipInterface;
+      const ship: Ship = action.payload as Ship;
       ship.position = state.ships.length + 1;
 
       return {
@@ -27,7 +27,7 @@ export function fleetReducer(state: FleetState = fleetInitialState, action: Flee
     case FleetActionTypes.REMOVE_SHIP: {
       const ships = cloneDeep(state.ships);
       const newShips = ships.filter(ship => ship.position !== action.payload).map((s) => {
-        const ship: ShipInterface = Object.assign({}, s);
+        const ship: Ship = Object.assign({}, s);
 
         if (ship.position > action.payload) {
           ship.position -= 1;

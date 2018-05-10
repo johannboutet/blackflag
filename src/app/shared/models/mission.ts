@@ -1,4 +1,4 @@
-export interface MissionInterface {
+export interface Mission {
   id: string;
   title: string;
   city: string;

@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material';
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/app.state';
 import { ShipFormComponent } from 'app/fleet/ship-form/ship-form.component';
-import { ShipInterface } from 'app/shared/models/ship.interface';
+import { Ship } from 'app/shared/models/ship';
 import * as fromFleet from 'app/state/fleet/fleet.reducer';
 
 import { Observable } from 'rxjs';
@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
 })
 export class FleetComponent implements OnInit {
   @ViewChild('nameInput') nameControl: ElementRef;
-  ships$: Observable<ShipInterface[]>;
+  ships$: Observable<Ship[]>;
 
   constructor(private store: Store<AppState>, private dialog: MatDialog) {
   }
@@ -28,7 +28,7 @@ export class FleetComponent implements OnInit {
     this.dialog.open(ShipFormComponent, { autoFocus: true, disableClose: true });
   }
 
-  trackByPosition(index: number, ship: ShipInterface): number {
+  trackByPosition(index: number, ship: Ship): number {
     if (ship) {
       return ship.position;
     }

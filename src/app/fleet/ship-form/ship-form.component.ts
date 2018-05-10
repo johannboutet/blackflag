@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/app.state';
-import { SHIP_KINDS, ShipInterface } from 'app/shared/models/ship.interface';
+import { SHIP_KINDS, Ship } from 'app/shared/models/ship';
 import { AddShip } from 'app/state/fleet/fleet.actions';
 
 @Component({
@@ -30,7 +30,7 @@ export class ShipFormComponent implements OnInit {
 
   addShip() {
     if (this.shipForm.valid) {
-      const ship: ShipInterface = {
+      const ship: Ship = {
         name: this.shipForm.value.name,
         firePower: this.shipForm.value.firePower,
         speed: this.shipForm.value.speed,

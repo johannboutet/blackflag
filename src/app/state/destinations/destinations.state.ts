@@ -1,8 +1,8 @@
 import { destinations } from 'app/shared/data/destinations';
-import { DestinationInterface } from 'app/shared/models/destination.interface';
+import { Destination } from 'app/shared/models/destination';
 
 export interface DestinationsState {
-  readonly entities: DestinationInterface[];
+  readonly entities: Destination[];
 }
 
 export const destinationInitialState: DestinationsState = {

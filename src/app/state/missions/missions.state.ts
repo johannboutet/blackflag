@@ -1,8 +1,8 @@
 import { allMissions } from 'app/shared/data/misssions/missions';
-import { MissionInterface } from 'app/shared/models/mission.interface';
+import { Mission } from 'app/shared/models/mission';
 
 export interface MissionsState {
-  readonly entities: MissionInterface[];
+  readonly entities: Mission[];
 }
 
 export const missionsInitialState: MissionsState = {

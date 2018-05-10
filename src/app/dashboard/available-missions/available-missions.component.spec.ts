@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FinderComponent } from './finder.component';
+import { AvailableMissionsComponent } from './available-missions.component';
 
-describe('FinderComponent', () => {
-  let component: FinderComponent;
-  let fixture: ComponentFixture<FinderComponent>;
+describe('AvailableMissionsComponent', () => {
+  let component: AvailableMissionsComponent;
+  let fixture: ComponentFixture<AvailableMissionsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FinderComponent ]
+      declarations: [ AvailableMissionsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FinderComponent);
+    fixture = TestBed.createComponent(AvailableMissionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

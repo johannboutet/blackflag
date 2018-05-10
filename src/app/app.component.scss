@@ -1,3 +1,4 @@
+@import "~@angular/material/theming";
 @import "~styles/variables.scss";
 
 :host {
@@ -7,7 +8,25 @@
   background: $assassins-white;
 }
 
+mat-sidenav-container {
+  height: 100%;
+}
+
 mat-sidenav {
   width: 15rem;
   background: $naval-blue;
+  @include mat-elevation(4);
+}
+
+mat-sidenav-content {
+  height: 100%;
+  background: $pale-blue;
+  padding: 1.25rem;
+}
+
+main {
+  height: 100%;
+  background: $assassins-white;
+  padding: 1.25rem;
+  @include mat-elevation(4);
 }
