@@ -28,5 +28,6 @@ main {
   height: 100%;
   background: $assassins-white;
   padding: 1.25rem;
+  overflow-y: auto;
   @include mat-elevation(4);
 }

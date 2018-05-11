@@ -12,6 +12,12 @@
   justify-content: flex-start;
 }
 
+button {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+}
+
 .add-ship {
   @include mat-elevation(2);
   display: flex;
