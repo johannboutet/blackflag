@@ -1,7 +1,7 @@
-<p>Ongoing Missions</p>
+<h1>Ongoing Missions</h1>
 
 <ul *ngIf="(missions$ | async)?.length; else noMissions">
-  <li *ngFor="let mission of missions$ | async; trackBy: trackByAvailableMissionId;">
+  <li *ngFor="let mission of missions$ | async; trackBy: trackByMissionId;">
     {{ mission.title }} - {{ mission.ship.name }}
     <span (click)="stopMission.emit(mission)">[stop]</span>
   </li>

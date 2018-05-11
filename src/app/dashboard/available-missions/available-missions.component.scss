@@ -1,3 +1,59 @@
+@import "~@angular/material/theming";
+@import "~styles/variables";
+
 :host {
   display: block;
+  margin-bottom: 1.25rem;
+}
+
+.missions-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+mat-card {
+  margin: 0 0.625rem 0.625rem 0;
+}
+
+mat-card-content {
+  font-weight: 400;
+}
+
+mat-card-actions {
+  text-align: right;
+
+  i {
+    font-size: 1.5rem;
+  }
+}
+
+.ship-info {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid $pale-blue;
+}
+
+.ship-logo {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  i.ship-icon {
+    font-size: 3rem;
+    color: $naval-blue;
+    margin-right: 0.625rem;
+  }
+
+  .ship-kind {
+    color: $gold;
+  }
+}
+
+.status-icons {
+  margin-top: 0.625rem;
+  line-height: 1;
+  color: $gold;
+  white-space: nowrap;
+  text-align: center;
 }

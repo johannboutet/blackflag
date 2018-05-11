@@ -2,6 +2,7 @@
 @import "~normalize.css";
 @import "~styles/blackflag-font";
 @import "~styles/blackflag-theme";
+@import "~styles/variables";
 
 html, body {
   margin: 0;
@@ -23,6 +24,19 @@ body {
   box-sizing: border-box;
 }
 
+h1 {
+  margin: 0 0 1.25rem;
+  font-family: 'trajan-pro-3', serif;
+  font-size: 1.25rem;
+  font-weight: normal;
+  color: $naval-blue;
+}
+
 p {
   margin: 0;
+}
+
+strong {
+  font-weight: 500;
+  color: $naval-blue;
 }

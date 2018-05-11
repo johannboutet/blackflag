@@ -1,10 +1,42 @@
-<p>Available missions</p>
+<h1>Available missions</h1>
 
-<ul *ngIf="(availableMissions$ | async)?.length; else noMissions">
-  <li *ngFor="let am of availableMissions$ | async; trackBy: trackByMissionId;">
-    {{ am.mission.title }} - {{ am.ship.name }}
-    <span (click)="startMission.emit(am)">[start]</span>
-  </li>
-</ul>
+<div class="missions-list" *ngIf="(availableMissions$ | async)?.length; else noMissions">
+  <mat-card class="mission" *ngFor="let am of availableMissions$ | async; trackBy: trackByAvailableMissionId;">
+    <mat-card-content>
+      <div class="ship-info">
+
+        <div class="ship-logo">
+          <i class="ship-icon icon-{{ am.ship.kind }}"></i>
+
+          <div>
+            <p><strong>{{ am.ship.name }}</strong></p>
+            <p class="ship-kind" [innerHTML]="getShipName(am.ship.kind)"></p>
+          </div>
+        </div>
+
+        <div class="status-icons">
+          <i class="icon-cargo"></i> {{ am.ship.cargoCapacity }} |
+          <i class="icon-speed"></i> {{ am.ship.speed }} |
+          <i class="icon-firepower"></i> {{ am.ship.firePower }}
+        </div>
+      </div>
+
+      <div class="mission-info">
+        <p><strong>{{ am.mission.title }}</strong></p>
+
+        <div class="status-icons">
+          <i class="icon-cargo"></i> {{ am.mission.totalCargo}} |
+          <i class="icon-speed"></i> {{ am.mission.reward}} R
+        </div>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-icon-button color="primary" (click)="startMission.emit(am)" matTooltip="Send ship on this mission">
+        <i class="icon-ship"></i>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
 
 <ng-template #noMissions><p>No missions are available for your fleet</p></ng-template>

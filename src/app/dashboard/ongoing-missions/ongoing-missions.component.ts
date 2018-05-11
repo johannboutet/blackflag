@@ -12,4 +12,8 @@ export class OngoingMissionsComponent {
   @Output() stopMission: EventEmitter<Mission> = new EventEmitter<Mission>();
 
   constructor() { }
+
+  trackByMissionId = (index: number, mission: Mission): string => {
+    return mission.id;
+  }
 }

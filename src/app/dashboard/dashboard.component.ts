@@ -82,12 +82,4 @@ export class DashboardComponent implements OnInit {
     this.store.dispatch(new RecallShip(mission.ship));
     this.store.dispatch(new StopMission(mission));
   }
-
-  trackByAvailableMissionId = (index: number, availableMission: AvailableMission): string => {
-    return availableMission.mission.id;
-  }
-
-  trackByMissionId = (index: number, mission: Mission): string => {
-    return mission.id;
-  }
 }
