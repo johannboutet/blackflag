@@ -2,15 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AvailableMission } from 'app/shared/models/available-mission';
 import { Mission } from 'app/shared/models/mission';
-import { OngoingMission } from 'app/shared/models/ongoing.mission';
 import { Ship } from 'app/shared/models/ship';
 import { AppState } from 'app/state/app.state';
-import { LockShip, UnlockShip } from 'app/state/fleet/fleet.actions';
-import { getShips } from 'app/state/fleet/fleet.reducer';
-import { LockMission, UnlockMission } from 'app/state/missions/missions.actions';
-import { getMissions } from 'app/state/missions/missions.reducer';
-import { StartMission, StopMission } from 'app/state/ongoing/ongoing.actions';
-import { getOngoingMissions } from 'app/state/ongoing/ongoing.reducer';
+import { RecallShip, SendShip } from 'app/state/fleet/fleet.actions';
+import { getAvailableShips } from 'app/state/fleet/fleet.reducer';
+import { StartMission, StopMission } from 'app/state/missions/missions.actions';
+import { getAvailableMissions, getOngoingMissions } from 'app/state/missions/missions.reducer';
 import { cloneDeep } from 'lodash';
 import { combineLatest, Observable } from 'rxjs';
 
@@ -21,7 +18,7 @@ import { combineLatest, Observable } from 'rxjs';
 })
 export class DashboardComponent implements OnInit {
   availableMissions$: Observable<AvailableMission[]>;
-  ongoingMissions$: Observable<OngoingMission[]>;
+  ongoingMissions$: Observable<Mission[]>;
 
   static sortMissions(mission1: Mission, mission2: Mission): number {
     if (mission1.reward > mission2.reward) {
@@ -44,8 +41,8 @@ export class DashboardComponent implements OnInit {
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-    const missions$: Observable<Mission[]> = this.store.select(getMissions);
-    const ships$: Observable<Ship[]> = this.store.select(getShips);
+    const missions$: Observable<Mission[]> = this.store.select(getAvailableMissions);
+    const ships$: Observable<Ship[]> = this.store.select(getAvailableShips);
 
     this.availableMissions$ = combineLatest(missions$, ships$, this.findBestCombination);
     this.ongoingMissions$ = this.store.select(getOngoingMissions);
@@ -53,9 +50,9 @@ export class DashboardComponent implements OnInit {
 
   findBestCombination(missions: Mission[], ships: Ship[]): AvailableMission[] {
     const availableMissions: AvailableMission[] = [];
-    const availableShips = cloneDeep(ships.filter(s => s.available));
+    const availableShips = cloneDeep(ships);
 
-    missions = missions.filter(m => !m.locked).sort(DashboardComponent.sortMissions);
+    missions = missions.sort(DashboardComponent.sortMissions);
 
     for (const mission of missions) {
       const bestShip: Ship = availableShips.filter(s => s.cargoCapacity >= mission.totalCargo).sort(DashboardComponent.sortShips)[0];
@@ -77,21 +74,20 @@ export class DashboardComponent implements OnInit {
     const ship = availableMission.ship;
     const mission = availableMission.mission;
 
-    this.store.dispatch(new LockMission(mission.id));
-    this.store.dispatch(new LockShip(ship));
+    this.store.dispatch(new SendShip({ ship, mission }));
     this.store.dispatch(new StartMission({ mission, ship }));
   }
 
-  stopMission(ongoingMission: OngoingMission) {
-    const ship = ongoingMission.ship;
-    const mission = ongoingMission.mission;
-
-    this.store.dispatch(new UnlockMission(mission.id));
-    this.store.dispatch(new UnlockShip(ship));
-    this.store.dispatch(new StopMission({ mission, ship }));
+  stopMission(mission: Mission) {
+    this.store.dispatch(new RecallShip(mission.ship));
+    this.store.dispatch(new StopMission(mission));
   }
 
-  trackByMissionId = (index: number, objWithMission: AvailableMission | OngoingMission): string => {
-    return objWithMission.mission.id;
+  trackByAvailableMissionId = (index: number, availableMission: AvailableMission): string => {
+    return availableMission.mission.id;
+  }
+
+  trackByMissionId = (index: number, mission: Mission): string => {
+    return mission.id;
   }
 }

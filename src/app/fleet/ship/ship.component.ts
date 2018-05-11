@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/app.state';
 import { SHIP_KINDS, Ship } from 'app/shared/models/ship';
-import { LockShip, RemoveShip, UnlockShip } from 'app/state/fleet/fleet.actions';
+import { RemoveShip } from 'app/state/fleet/fleet.actions';
 
 @Component({
   selector: 'app-ship',
@@ -18,11 +18,6 @@ export class ShipComponent {
 
   get shipKindName() {
     return this.shipKinds.find(k => k.value === this.ship.kind).name;
-  }
-
-  toggleShipLock() {
-    const action = this.ship.available ? LockShip : UnlockShip;
-    this.store.dispatch(new action(this.ship));
   }
 
   deleteShip(event) {

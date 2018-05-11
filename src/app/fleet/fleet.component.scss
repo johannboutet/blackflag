@@ -7,11 +7,9 @@
 
 .ship-list {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   padding: 20px;
   justify-content: flex-start;
-  align-items: stretch;
-  overflow-x: scroll;
 }
 
 .add-ship {

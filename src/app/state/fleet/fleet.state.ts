@@ -12,7 +12,7 @@ export const fleetInitialState: FleetState = {
       cargoCapacity: 30,
       firePower: 90,
       kind: 'brig',
-      available: true,
+      mission: null,
       position: 2,
     },
     {
@@ -21,7 +21,7 @@ export const fleetInitialState: FleetState = {
       cargoCapacity: 45,
       firePower: 50,
       kind: 'brig',
-      available: false,
+      mission: null,
       position: 3,
     },
     {
@@ -30,7 +30,7 @@ export const fleetInitialState: FleetState = {
       cargoCapacity: 15,
       firePower: 5,
       kind: 'schooner',
-      available: false,
+      mission: null,
       position: 4,
     },
     {
@@ -39,7 +39,7 @@ export const fleetInitialState: FleetState = {
       cargoCapacity: 90,
       firePower: 90,
       kind: 'manowar',
-      available: true,
+      mission: null,
       position: 5,
     },
     {
@@ -48,7 +48,7 @@ export const fleetInitialState: FleetState = {
       cargoCapacity: 40,
       firePower: 50,
       kind: 'brig',
-      available: true,
+      mission: null,
       position: 6,
     },
     {
@@ -57,7 +57,7 @@ export const fleetInitialState: FleetState = {
       cargoCapacity: 90,
       firePower: 90,
       kind: 'manowar',
-      available: true,
+      mission: null,
       position: 7,
     },
     {
@@ -66,7 +66,7 @@ export const fleetInitialState: FleetState = {
       cargoCapacity: 50,
       firePower: 75,
       kind: 'frigate',
-      available: false,
+      mission: null,
       position: 8,
     },
     {
@@ -75,7 +75,7 @@ export const fleetInitialState: FleetState = {
       cargoCapacity: 20,
       firePower: 10,
       kind: 'schooner',
-      available: true,
+      mission: null,
       position: 9,
     },
     {
@@ -84,7 +84,7 @@ export const fleetInitialState: FleetState = {
       cargoCapacity: 50,
       firePower: 80,
       kind: 'frigate',
-      available: true,
+      mission: null,
       position: 10,
     },
   ],

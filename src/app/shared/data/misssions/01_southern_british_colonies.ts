@@ -13,6 +13,7 @@ export const southern_british_colonies: Mission[] = [
     },
     totalCargo: 5,
     locked: false,
+    ship: null,
   },
   {
     id: '1-2',
@@ -26,6 +27,7 @@ export const southern_british_colonies: Mission[] = [
     },
     totalCargo: 5,
     locked: false,
+    ship: null,
   },
   {
     id: '1-3',
@@ -40,6 +42,7 @@ export const southern_british_colonies: Mission[] = [
     },
     totalCargo: 8,
     locked: false,
+    ship: null,
   },
   {
     id: '1-4',
@@ -53,5 +56,6 @@ export const southern_british_colonies: Mission[] = [
     },
     totalCargo: 5,
     locked: false,
+    ship: null,
   },
 ];

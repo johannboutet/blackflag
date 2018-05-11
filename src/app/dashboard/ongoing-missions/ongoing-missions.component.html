@@ -1,9 +1,9 @@
 <p>Ongoing Missions</p>
 
-<ul *ngIf="(ongoingMissions$ | async)?.length; else noMissions">
-  <li *ngFor="let ogMission of ongoingMissions$ | async; trackBy: trackByMissionId;">
-    {{ ogMission.mission.title }} - {{ ogMission.ship.name }}
-    <span (click)="stopMission.emit(ogMission)">[stop]</span>
+<ul *ngIf="(missions$ | async)?.length; else noMissions">
+  <li *ngFor="let mission of missions$ | async; trackBy: trackByAvailableMissionId;">
+    {{ mission.title }} - {{ mission.ship.name }}
+    <span (click)="stopMission.emit(mission)">[stop]</span>
   </li>
 </ul>
 

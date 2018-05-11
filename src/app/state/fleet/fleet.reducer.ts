@@ -1,21 +1,21 @@
 import { Ship } from 'app/shared/models/ship';
 import { AppState } from 'app/state/app.state';
-import { FleetActions, FleetActionTypes } from 'app/state/fleet/fleet.actions';
+import { ADD_SHIP, FleetActions, RECALL_SHIP, REMOVE_SHIP, SEND_SHIP, SET_SHIPS } from 'app/state/fleet/fleet.actions';
 import { fleetInitialState, FleetState } from 'app/state/fleet/fleet.state';
 import { cloneDeep } from 'lodash';
 import { createSelector } from 'reselect';
 
 export function fleetReducer(state: FleetState = fleetInitialState, action: FleetActions): FleetState {
   switch (action.type) {
-    case FleetActionTypes.SET_SHIPS: {
+    case SET_SHIPS: {
       return {
         ...state,
-        ships: action.payload,
+        ships: cloneDeep(action.payload),
       };
     }
 
-    case FleetActionTypes.ADD_SHIP: {
-      const ship: Ship = action.payload as Ship;
+    case ADD_SHIP: {
+      const ship = cloneDeep(action.payload);
       ship.position = state.ships.length + 1;
 
       return {
@@ -24,7 +24,7 @@ export function fleetReducer(state: FleetState = fleetInitialState, action: Flee
       };
     }
 
-    case FleetActionTypes.REMOVE_SHIP: {
+    case REMOVE_SHIP: {
       const ships = cloneDeep(state.ships);
       const newShips = ships.filter(ship => ship.position !== action.payload).map((s) => {
         const ship: Ship = Object.assign({}, s);
@@ -42,26 +42,24 @@ export function fleetReducer(state: FleetState = fleetInitialState, action: Flee
       };
     }
 
-    case FleetActionTypes.LOCK_SHIP: {
-      const ships = cloneDeep(state.ships);
-      const shipIndex = ships.findIndex(s => s.position === action.payload.position);
-      ships[shipIndex].available = false;
+    case SEND_SHIP: {
+      const shipIndex = state.ships.findIndex(s => s.position === action.payload.ship.position);
+      const ship = cloneDeep(state.ships[shipIndex]);
 
-      return {
-        ...state,
-        ships: ships,
-      };
+      ship.mission = action.payload.mission;
+      state.ships.splice(shipIndex, 1, ship)
+
+      return state;
     }
 
-    case FleetActionTypes.UNLOCK_SHIP: {
-      const ships = cloneDeep(state.ships);
-      const shipIndex = ships.findIndex(s => s.position === action.payload.position);
-      ships[shipIndex].available = true;
+    case RECALL_SHIP: {
+      const shipIndex = state.ships.findIndex(s => s.position === action.payload.position);
+      const ship = cloneDeep(state.ships[shipIndex]);
 
-      return {
-        ...state,
-        ships: ships,
-      };
+      ship.mission = null;
+      state.ships.splice(shipIndex, 1, ship)
+
+      return state;
     }
 
     default: {
@@ -75,3 +73,6 @@ const getFleetState = (state: AppState): FleetState => state.fleet;
 const getFleetShipsState = (state: FleetState) => state.ships;
 
 export const getShips = createSelector(getFleetState, getFleetShipsState);
+export const getAvailableShips = (state: AppState): Ship[] => {
+  return state.fleet.ships.filter(s => s.mission === null);
+};

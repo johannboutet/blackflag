@@ -37,7 +37,7 @@ export class ShipFormComponent implements OnInit {
         cargoCapacity: this.shipForm.value.cargoCapacity,
         kind: this.shipForm.value.kind,
         position: null,
-        available: true,
+        mission: null,
       };
 
       this.store.dispatch(new AddShip(ship));

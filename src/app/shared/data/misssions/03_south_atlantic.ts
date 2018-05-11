@@ -14,6 +14,7 @@ export const south_atlantic: Mission[] = [
     },
     totalCargo: 15,
     locked: false,
+    ship: null,
   },
   {
     id: '3-2',
@@ -27,6 +28,7 @@ export const south_atlantic: Mission[] = [
     },
     totalCargo: 20,
     locked: false,
+    ship: null,
   },
   {
     id: '3-3',
@@ -40,6 +42,7 @@ export const south_atlantic: Mission[] = [
     },
     totalCargo: 10,
     locked: false,
+    ship: null,
   },
   {
     id: '3-4',
@@ -53,6 +56,7 @@ export const south_atlantic: Mission[] = [
     },
     totalCargo: 20,
     locked: false,
+    ship: null,
   },
   {
     id: '3-5',
@@ -67,6 +71,7 @@ export const south_atlantic: Mission[] = [
     },
     totalCargo: 15,
     locked: false,
+    ship: null,
   },
   {
     id: '3-6',
@@ -80,6 +85,7 @@ export const south_atlantic: Mission[] = [
     },
     totalCargo: 25,
     locked: false,
+    ship: null,
   },
   {
     id: '3-7',
@@ -93,5 +99,6 @@ export const south_atlantic: Mission[] = [
     },
     totalCargo: 30,
     locked: false,
+    ship: null,
   },
 ];

@@ -13,6 +13,7 @@ export const gulf_mexico: Mission[] = [
     },
     totalCargo: 10,
     locked: false,
+    ship: null,
   },
   {
     id: '2-2',
@@ -26,6 +27,7 @@ export const gulf_mexico: Mission[] = [
     },
     totalCargo: 15,
     locked: false,
+    ship: null,
   },
   {
     id: '2-3',
@@ -39,6 +41,7 @@ export const gulf_mexico: Mission[] = [
     },
     totalCargo: 5,
     locked: false,
+    ship: null,
   },
   {
     id: '2-4',
@@ -52,6 +55,7 @@ export const gulf_mexico: Mission[] = [
     },
     totalCargo: 20,
     locked: false,
+    ship: null,
   },
   {
     id: '2-5',
@@ -65,5 +69,6 @@ export const gulf_mexico: Mission[] = [
     },
     totalCargo: 15,
     locked: false,
+    ship: null,
   },
 ];

@@ -1,3 +1,5 @@
+import { Mission } from 'app/shared/models/mission';
+
 export interface Ship {
   position: number;
   name: string;
@@ -5,7 +7,7 @@ export interface Ship {
   firePower: number;
   speed: number;
   cargoCapacity: number;
-  available: boolean;
+  mission: Mission;
 }
 
 export const SHIP_KINDS = [
