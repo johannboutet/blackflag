@@ -8,7 +8,6 @@
 .ship-list {
   display: flex;
   flex-flow: row wrap;
-  padding: 20px;
   justify-content: flex-start;
 }
 
@@ -24,14 +23,14 @@ button {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin: 0 10px 10px 0;
-  padding: 20px;
+  margin: 0 0.625rem 0.625rem 0;
+  padding: 1.25rem;
   text-align: center;
   color: $gold;
   cursor: pointer;
 
   i {
-    font-size: 80px;
+    font-size: 5rem;
   }
 
   p {

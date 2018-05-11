@@ -4,8 +4,7 @@
 :host {
   @include mat-elevation(2);
   display: block;
-  flex: 1 1 auto;
-  margin: 0 10px 10px 0;
+  margin: 0 0.625rem 0.625rem 0;
   padding: 0;
 }
 
@@ -13,23 +12,22 @@
   position: relative;
   height: 100%;
   margin: 0;
-  padding: 10px 20px 20px;
+  padding: 0.625rem 1.25rem 1.25rem;
   text-align: center;
   user-select: none;
 
   & > i {
-    font-size: 80px;
+    font-size: 5rem;
     color: $naval-blue;
   }
 }
 
 .ship-status {
   position: relative;
-  margin: 0 -10px 10px;
-  padding-right: 20px;
-  font-size: 15px;
+  margin: 0 -0.625rem 0.625rem;
+  padding-right: 1.25rem;
   font-weight: 400;
-  line-height: 15px;
+  line-height: 1;
   color: $gold;
   white-space: nowrap;
   text-align: left;
@@ -47,7 +45,7 @@
     visibility: hidden;
     position: absolute;
     right: 0;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: map-get($mat-red, 700);
     cursor: pointer;
   }
@@ -62,16 +60,15 @@ p {
 }
 
 .ship-name {
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
   font-family: 'trajan-pro-3', serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   color: $naval-blue;
   white-space: nowrap;
 }
 
 .ship-kind {
-  font-size: 16px;
   font-weight: 400;
   color: $gold;
 }
